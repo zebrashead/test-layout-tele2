@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'stencil';
+  src: url("../fonts/StandardCTStencil-Bold.woff2") format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tele2_serif";
+  src: url("../fonts/tele2_displayserif-bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tele2_sans_bold";
+  src: url("../fonts/tele2_textsans-bold.woff") format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tele2_sans";
+  src: url("../fonts/tele2_textsans-regular.woff") format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,18 @@
+.footer__inner {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--color-gray);
+  font-size: 16px;
+
+  @include mobile {
+    padding: 24px 0;
+  }
+}
+
+.footer__copyright {
+  margin-bottom: 3px;
+}
+
+.footer__policy {
+  text-decoration: underline;
+}

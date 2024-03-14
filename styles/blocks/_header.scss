@@ -1,0 +1,83 @@
+.header {
+  background-color: #9C9C9C;
+  padding-top: 22px;
+
+  @include mobile {
+    position: relative;
+    background-color: #8F9399;
+  }
+  &__inner {
+    @include mobile {
+      padding-top: 400px;
+    }
+  }
+  &__logo {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__body {
+    max-width: 536px;
+    padding: 130px 0 84px 0;
+
+    @include mobile {
+      max-width: 339px;
+      padding: 20px;
+      background-color: #000;
+      position: absolute;
+      top: 300px;
+    }
+
+    @include mobile-above-test {
+      max-width: 536px;
+
+    }
+  }
+
+  &__title {
+    font-family: 'stencil', serif;
+    font-size: 54px;
+
+    @include mobile {
+      font-size: 34px;
+    }
+  }
+
+  &__description {
+    padding-top: 18px;
+    font-size: 22px;
+
+    @include mobile {
+      font-size: 19px;
+    }
+  }
+
+  &__more {
+    display: flex;
+  }
+
+  &__more-link {
+    padding-top: 36px;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 19px;
+      padding-top: 18px;
+    }
+  }
+
+  /* плохо реализовал стрелку вниз*/
+  &__more-arrow {
+    display: inline-block;
+    position: relative;
+    left: 11px;
+    bottom: 4px;
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid var(--color-light);
+    border-right: 1px solid var(--color-light);
+    border-radius: 0 2px 0 0;
+    transform: rotate(135deg);
+  }
+}

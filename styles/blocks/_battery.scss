@@ -1,0 +1,171 @@
+.section-battery {
+  position: relative;
+  padding-right: 0;
+
+  .image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 80vw;
+
+    .img {
+      width: 100%;
+    }
+  }
+
+  .battery {
+    padding-top: 57px;
+    position: relative;
+
+    &__body {
+      width: 40%;
+      max-width: 389px;
+      background-color: $color-dark-test;
+      z-index: 1;
+      position: relative;
+      padding-top: 1px;
+    }
+
+    @include mobile {
+      padding-top: 0;
+      padding-left: 12px;
+    }
+
+    &__lines {
+      //костыль какой-то, не знаю как сделать картинку как в дизайне, ГБ не стал липить
+      position: absolute;
+      top: 28px;
+      left: 420px;
+    }
+
+    &__logo {
+      max-width: 389px;
+      /* не знаю как сделать свечение */
+      border: 3px solid lightblue;
+      border-radius: 14px;
+      margin-top: 106px;
+      position: relative;
+
+      @include mobile {
+        max-width: 282px;
+        border: 1.5px solid lightblue;
+        margin-top: 34px;
+      }
+
+      &::after {
+        position: absolute;
+        top: 25%;
+        right: -9%;
+        content: "";
+        display: block;
+        width: 33px;
+        height: 91px;
+        border-top: 3px solid #CAE5FF;
+        border-right: 3px solid #CAE5FF;
+        border-bottom: 3px solid #CAE5FF;
+        border-radius: 0 14px 14px 0;
+        background-color: $color-dark-test;
+
+        @include mobile {
+          height: 68px;
+          width: 24px;
+          border-top: 1.5px solid #CAE5FF;
+          border-right: 1.5px solid #CAE5FF;
+          border-bottom: 1.5px solid #CAE5FF;
+        }
+      }
+
+      &-container {
+        display: flex;
+        column-gap: 20px;
+        margin: 24px 51px;
+
+        @include mobile {
+          column-gap: 16px;
+          margin: 14px 34px;
+        }
+      }
+
+      &-small {
+        width: 84px;
+        height: 135px;
+        border-radius: 14px;
+
+        @include mobile {
+          width: 61px;
+          height: 99px;
+          border-radius: 10px;
+        }
+      }
+    }
+
+  }
+
+  .battery--fulfilled {
+    background-image: linear-gradient(#8DE0FF, #3FCBFF);
+  }
+
+  .battery--transparent {
+    border: 3px solid lightblue;
+
+    @include mobile {
+      border: 1.5px solid lightblue;
+    }
+  }
+
+  .battery__list {
+    display: flex;
+    padding: 27px 0 0 48px;
+    column-gap: 24px;
+
+    @include mobile {
+      padding: 18px 0 0 24px;
+      column-gap: 18px;
+    }
+
+
+    &-item {
+      font-family: 'tele2_sans_bold', 'serif';
+      color: #35383e;
+      text-align: center;
+      font-size: 24px;
+
+      @include mobile {
+        font-size: 20px;
+        line-height: 1.26;
+      }
+
+      .active {
+        color: #3FCBFF;
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      max-width: 86px;
+
+      @include mobile {
+        max-width: 71px;
+      }
+
+      &:hover {
+        color: lightblue;
+      }
+    }
+  }
+
+  .image__mobile {
+    display: none;
+    @include mobile {
+
+    }
+  }
+}
+
+
+
+
+
+
+
