@@ -1,0 +1,93 @@
+.download-app {
+  background-color: var(--color-light);
+
+  &__inner {
+    display: flex;
+    padding-top: 80px;
+
+    @include mobile {
+
+      flex-direction: column;
+      padding-top: 46px;
+    }
+
+  }
+
+  &__description {
+    max-width: 662px;
+    color: var(--color-dark);
+    font-size: 22px;
+
+    @include mobile {
+      font-size: 19px;
+    }
+
+  }
+
+  &__title {
+    font-family: 'tele2_serif', serif;
+    font-size: 38px;
+    line-height: 1.44;
+
+    @include mobile {
+      font-size: 28px;
+      line-height: 1.33;
+    }
+  }
+
+  &__text1 {
+    padding-top: 36px;
+
+    @include mobile {
+      padding-top: 18px;
+    }
+  }
+
+  &__text2 {
+    padding-top: 40px;
+
+    @include mobile {
+      padding-top: 30px;
+    }
+  }
+
+  &__qr-image {
+    margin: 46px 0 140px 0;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__phone-image {
+    margin-left: 178px;
+
+    @include mobile {
+      width: 264px;
+      height: 285px;
+      object-fit: cover;
+      object-position: top;
+      padding-top: 35px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text3, &__appstore-image {
+    @include mobile-above {
+      display: none;
+    }
+  }
+
+  &__text3 {
+    color: black;
+    font-size: 22px;
+    margin: 0 auto;
+    padding-top: 36px;
+  }
+
+  &__appstore-link {
+    width: 139px;
+    margin: 18px auto 43px auto;
+  }
+
+}

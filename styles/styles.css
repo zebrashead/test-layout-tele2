@@ -221,7 +221,7 @@ a {
 }
 
 .header {
-  background-color: purple;
+  background-color: #9C9C9C;
   padding-top: 22px;
   /* плохо реализовал стрелку вниз*/
 }
@@ -514,7 +514,7 @@ a {
   width: 259px;
   height: 250px;
   border-radius: 50%;
-  background-color: rgba(0, 111, 255, 0.3);
+  background-color: rgba(63, 203, 255, 0.1);
   filter: blur(20px);
 }
 @media (max-width: 1092px) {
@@ -820,10 +820,10 @@ a {
 }
 .section-battery .image {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: -140px;
+  bottom: -35px;
   z-index: 0;
-  width: 80vw;
+  width: 100vw;
 }
 .section-battery .image .img {
   width: 100%;
@@ -838,7 +838,30 @@ a {
   background-color: #1F2229;
   z-index: 1;
   position: relative;
-  padding-top: 1px;
+}
+.section-battery .battery__body::after {
+  position: absolute;
+  top: 46px;
+  right: -33px;
+  content: "";
+  display: block;
+  width: 33px;
+  height: 91px;
+  border-top: 3px solid #3bbded;
+  border-right: 3px solid #3bbded;
+  border-bottom: 3px solid #3bbded;
+  border-radius: 0 14px 14px 0;
+  background-color: #1F2229;
+  box-shadow: 0 0 5px #3bbded;
+}
+@media (max-width: 767px) {
+  .section-battery .battery__body::after {
+    height: 68px;
+    width: 24px;
+    border-top: 1.5px solid #3bbded;
+    border-right: 1.5px solid #3bbded;
+    border-bottom: 1.5px solid #3bbded;
+  }
 }
 @media (max-width: 767px) {
   .section-battery .battery {
@@ -854,39 +877,41 @@ a {
 .section-battery .battery__logo {
   max-width: 389px;
   /* не знаю как сделать свечение */
-  border: 3px solid lightblue;
+  border: 3px solid #3bbded;
   border-radius: 14px;
   margin-top: 106px;
   position: relative;
+  box-shadow: 0 0 5px #3bbded;
+}
+.section-battery .battery__logo::before {
+  position: absolute;
+  top: -5px;
+  left: 50px;
+  content: "";
+  display: block;
+  width: 250px;
+  height: 7px;
+  background: radial-gradient(#FAFAFA, #3FCBFF);
+  border-radius: 90%;
+  filter: blur(1.5px);
+}
+.section-battery .battery__logo::after {
+  position: absolute;
+  bottom: -5px;
+  right: 50px;
+  content: "";
+  display: block;
+  width: 250px;
+  height: 7px;
+  background: radial-gradient(#FAFAFA, #3FCBFF);
+  border-radius: 90%;
+  filter: blur(1.5px);
 }
 @media (max-width: 767px) {
   .section-battery .battery__logo {
     max-width: 282px;
     border: 1.5px solid lightblue;
     margin-top: 34px;
-  }
-}
-.section-battery .battery__logo::after {
-  position: absolute;
-  top: 25%;
-  right: -9%;
-  content: "";
-  display: block;
-  width: 33px;
-  height: 91px;
-  border-top: 3px solid #CAE5FF;
-  border-right: 3px solid #CAE5FF;
-  border-bottom: 3px solid #CAE5FF;
-  border-radius: 0 14px 14px 0;
-  background-color: #1F2229;
-}
-@media (max-width: 767px) {
-  .section-battery .battery__logo::after {
-    height: 68px;
-    width: 24px;
-    border-top: 1.5px solid #CAE5FF;
-    border-right: 1.5px solid #CAE5FF;
-    border-bottom: 1.5px solid #CAE5FF;
   }
 }
 .section-battery .battery__logo-container {
@@ -916,11 +941,11 @@ a {
   background-image: linear-gradient(#8DE0FF, #3FCBFF);
 }
 .section-battery .battery--transparent {
-  border: 3px solid lightblue;
+  border: 3px solid #3bbded;
 }
 @media (max-width: 767px) {
   .section-battery .battery--transparent {
-    border: 1.5px solid lightblue;
+    border: 1.5px solid #3bbded;
   }
 }
 .section-battery .battery__list {

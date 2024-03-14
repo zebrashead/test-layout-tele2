@@ -1,0 +1,144 @@
+.autopayment {
+  &.container {
+    @include mobile {
+      position: relative;
+      padding: 44px 18px 64px 18px;
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 152px;
+        height: 144px;
+        background-image: url("../images/lines-mobile.png");
+        //не знаю как поместить на задний фон
+        z-index: -1;
+      }
+    }
+
+
+  }
+}
+
+.connect__autopayment {
+  margin: 54px 0 150px 0;
+  border: 1px solid #D7F4FF;
+  border-radius: 16px;
+  display: flex;
+  box-shadow: 0 0 20px 1px #233642;
+  position: relative;
+
+  @include desktop {
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    background-color: $color-dark-test;
+    margin: 0;
+    z-index: 1;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 44px;
+    right: 315px;
+    width: 121px;
+    height: 117px;
+    border-radius: 50%;
+    background-color: #325164;
+    //блюр создает странный черный ореол по краям блока
+    filter: blur(40px);
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &-description {
+    max-width: 641px;
+    margin: 36px 0 41px 64px;
+
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin: 24px 18px 24px;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        bottom: -33px;
+        left: -15px;
+        width: 98px;
+        height: 118px;
+        background-image: url("../images/fly-gb-mobile.png");
+
+      }
+    }
+
+
+    p {
+      font-size: 22px;
+      line-height: 1.28;
+      margin-top: 24px;
+
+      @include mobile {
+        font-size: 19px;
+        line-height: 1.26;
+        margin-top: 18px;
+
+      }
+    }
+  }
+
+  &-title {
+    font-family: 'tele2_serif', 'serif';
+    font-size: 28px;
+    line-height: 1.36;
+  }
+
+  &-image {
+    margin: 38px 0 0 96px;
+    z-index: 1;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &-button {
+    margin: 69px 0 0 70px;
+    min-width: 181px;
+    border: 2px solid var(--color-light);
+    background-color: var(--color-dark);
+    border-radius: 30px;
+    color: var(--color-light);
+    font-size: 16px;
+    font-weight: 700;
+    max-height: 60px;
+    padding: 19px 45px;
+    cursor: pointer;
+
+    @include desktop {
+      margin: auto auto;
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 36px;
+      padding: 13px 25px;
+      line-height: 1.22;
+      min-width: 161px;
+    }
+  }
+}

@@ -4,10 +4,10 @@
 
   .image {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: -140px;
+    bottom: -35px;
     z-index: 0;
-    width: 80vw;
+    width: 100vw;
 
     .img {
       width: 100%;
@@ -24,7 +24,31 @@
       background-color: $color-dark-test;
       z-index: 1;
       position: relative;
-      padding-top: 1px;
+
+
+      &::after {
+        position: absolute;
+        top: 46px;
+        right: -33px;
+        content: "";
+        display: block;
+        width: 33px;
+        height: 91px;
+        border-top: 3px solid #3bbded;
+        border-right: 3px solid #3bbded;
+        border-bottom: 3px solid #3bbded;
+        border-radius: 0 14px 14px 0;
+        background-color: $color-dark-test;
+        box-shadow: 0 0 5px #3bbded;
+
+        @include mobile {
+          height: 68px;
+          width: 24px;
+          border-top: 1.5px solid #3bbded;
+          border-right: 1.5px solid #3bbded;
+          border-bottom: 1.5px solid #3bbded;
+        }
+      }
     }
 
     @include mobile {
@@ -42,10 +66,37 @@
     &__logo {
       max-width: 389px;
       /* не знаю как сделать свечение */
-      border: 3px solid lightblue;
+      border: 3px solid #3bbded;
       border-radius: 14px;
       margin-top: 106px;
       position: relative;
+      box-shadow: 0 0 5px #3bbded;
+
+      &::before {
+        position: absolute;
+        top: -5px;
+        left: 50px;
+        content: "";
+        display: block;
+        width: 250px;
+        height: 7px;
+        background: radial-gradient(#FAFAFA, #3FCBFF);
+        border-radius: 90%;
+        filter: blur(1.5px);
+      }
+
+      &::after {
+        position: absolute;
+        bottom: -5px;
+        right: 50px;
+        content: "";
+        display: block;
+        width: 250px;
+        height: 7px;
+        background: radial-gradient(#FAFAFA, #3FCBFF);
+        border-radius: 90%;
+        filter: blur(1.5px);
+      }
 
       @include mobile {
         max-width: 282px;
@@ -53,28 +104,6 @@
         margin-top: 34px;
       }
 
-      &::after {
-        position: absolute;
-        top: 25%;
-        right: -9%;
-        content: "";
-        display: block;
-        width: 33px;
-        height: 91px;
-        border-top: 3px solid #CAE5FF;
-        border-right: 3px solid #CAE5FF;
-        border-bottom: 3px solid #CAE5FF;
-        border-radius: 0 14px 14px 0;
-        background-color: $color-dark-test;
-
-        @include mobile {
-          height: 68px;
-          width: 24px;
-          border-top: 1.5px solid #CAE5FF;
-          border-right: 1.5px solid #CAE5FF;
-          border-bottom: 1.5px solid #CAE5FF;
-        }
-      }
 
       &-container {
         display: flex;
@@ -107,10 +136,10 @@
   }
 
   .battery--transparent {
-    border: 3px solid lightblue;
+    border: 3px solid #3bbded;
 
     @include mobile {
-      border: 1.5px solid lightblue;
+      border: 1.5px solid #3bbded;
     }
   }
 

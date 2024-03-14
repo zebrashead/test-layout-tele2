@@ -1,0 +1,116 @@
+.description__block {
+  min-width: 339px;
+  background-color: #2F333D;
+  border-radius: 16px;
+  margin-top: 80px;
+  display: flex;
+  position: relative;
+
+  @include mobile {
+    margin-top: 46px;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      right: -20px;
+      bottom: -50px;
+      width: 126px;
+      height: 240px;
+      background-image: url("../images/lightning-small-mobile.svg");
+    }
+  }
+
+
+  &-lightning {
+    position: absolute;
+    top: 40px;
+    right: 163px;
+    z-index: 1;
+    //не получилось понять почему свг не растягивается на всю ширину и высоту блока, пришлось скейлить
+    transform: scale(1.45);
+
+    @include desktop {
+      top: 123px;
+      right: -20px;
+    }
+
+    @include tablet {
+      top: 165px;
+      right: -45px;
+      transform: scale(0.9);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 77px;
+    right: 118px;
+    width: 259px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgb(63, 203, 255, 0.1);
+    //блюр создает странный черный ореол по краям блока
+    filter: blur(20px);
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      top: 208px;
+      right: 40px;
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &-text {
+    max-width: 780px;
+    font-size: 22px;
+    padding: 36px 0 0 64px;
+
+    @include mobile {
+      padding: 24px 22px 0 18px;
+      font-size: 19px;
+      line-height: 1.26;
+
+    }
+
+  }
+
+  &-p2 {
+    padding-top: 38px;
+
+    @include mobile {
+      padding-top: 34px;
+    }
+  }
+
+  &-button {
+    margin: 36px 0 36px 0;
+    //можно сделать миксин
+    max-width: 196px;
+    border-radius: 30px;
+    padding: 19px 45px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+
+    @include mobile {
+      display: flex;
+      margin: 24px auto 36px auto;
+      max-width: 176px;
+      border-radius: 30px;
+      padding: 13px 35px;
+    }
+  }
+
+}
