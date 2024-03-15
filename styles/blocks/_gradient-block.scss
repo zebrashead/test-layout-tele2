@@ -1,43 +1,66 @@
+.gradient {
+  position: relative;
+}
+
+.gradient-gb {
+  display: none;
+
+  @include mobile {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    &--1 {
+      width: 40px;
+      bottom: 30%;
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    &--2 {
+      bottom: 15%;
+      width: 70px;
+      left: 3px;
+    }
+
+    &--3 {
+      top: 0;
+      right: -5px;
+      width: 70px;
+      transform: rotate(45deg);
+    }
+
+    &--4 {
+      z-index: 2;
+      right: 0;
+      bottom: 15%;
+      transform: rotate(45deg);
+      width: 100px;
+    }
+  }
+}
 .gradient-block {
   max-width: 949px;
   margin: 64px auto 0 auto;
   position: relative;
-  overflow: hidden;
 
   @include mobile {
     margin-top: 188px;
-
-    &::after {
-      position: absolute;
-      display: block;
-      content: "";
-      right: -22px;
-      top: -3px;
-      width: 70px;
-      height: 64px;
-      background-image: url("../images/gb-mobile1-hidden.svg");
-      z-index: -1;
-    }
-
-    &::before {
-      //почему обрезается svg не понятно
-      position: absolute;
-      display: block;
-      content: "";
-      left: -18px;
-      bottom: 60px;
-      width: 85px;
-      height: 118px;
-      background-image: url("../images/gb-mobile2-hidden.svg");
-      z-index: -1;
-    }
   }
 
   &__body {
     border-radius: 16px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     padding-bottom: 54px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); //wtF?
+    overflow: hidden;
 
     &::after {
       position: absolute;
@@ -57,7 +80,7 @@
       display: block;
       content: "";
       left: 296px;
-      bottom: 15px;
+      bottom: -10px;
       width: 388px;
       height: 20px;
       border-radius: 90%;
@@ -65,13 +88,20 @@
       filter: blur(15px);
     }
 
-    &-helper {
+    @include mobile {
+      &::before,
+      &::after {
+        display: none;
+      }
 
+    }
+
+    &-helper {
       &::after {
         position: absolute;
         display: block;
         content: "";
-        left: 15px;
+        left: -10px;
         top: 45px;
         width: 20px;
         height: 287px;
@@ -84,7 +114,7 @@
         position: absolute;
         display: block;
         content: "";
-        right: 15px;
+        right: -10px;
         top: 45px;
         width: 20px;
         height: 287px;
@@ -93,12 +123,17 @@
         filter: blur(15px);
       }
 
+      @include mobile {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
     }
 
     @include mobile {
-      //тут какие-то полосы
-      background-image: url("../images/bg-mobile.png");
       padding-bottom: 36px;
+      overflow: hidden;
     }
   }
 
@@ -114,18 +149,8 @@
       font-size: 19px;
       text-align: left;
       padding: 24px 20px 0 18px;
+      line-height: 1.26;
 
-      &::after {
-        //почему обрезается svg не понятно
-        position: absolute;
-        display: block;
-        content: "";
-        right: -22px;
-        bottom: -40px;
-        width: 84px;
-        height: 91px;
-        background-image: url("../images/gb-mobile1.svg");
-      }
     }
 
     &-1 {
