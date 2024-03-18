@@ -4,15 +4,21 @@
 
   .image {
     position: absolute;
-    left: -140px;
-    bottom: -35px;
+    top: -20%;
+    right: -100vw;
     z-index: 0;
     width: 100vw;
 
+    &__mobile {
+      display: none;
+    }
+
+    &__desktop {
+      display: block;
+    }
+
     .img {
       width: 100%;
-      //пока скрыл волосы
-      display: none;
     }
   }
 
@@ -20,42 +26,21 @@
     padding-top: 57px;
     position: relative;
 
+    &__main {
+      display: flex;
+      align-items: center;
+    }
+
     &__body {
-      width: 40%;
-      max-width: 389px;
+      width: 421px;
       background-color: $color-dark-test;
       z-index: 1;
       position: relative;
-
-
-      &::after {
-        position: absolute;
-        top: 46px;
-        right: -33px;
-        content: "";
-        display: block;
-        width: 33px;
-        height: 91px;
-        border-top: 3px solid #3bbded;
-        border-right: 3px solid #3bbded;
-        border-bottom: 3px solid #3bbded;
-        border-radius: 0 14px 14px 0;
-        background-color: $color-dark-test;
-        box-shadow: 0 0 5px #3bbded;
-
-        @include mobile {
-          height: 68px;
-          width: 24px;
-          top: 30px;
-          right: -24px;
-          border-top: 1.5px solid #3bbded;
-          border-right: 1.5px solid #3bbded;
-          border-bottom: 1.5px solid #3bbded;
-        }
-      }
+      border: 1px solid red;
 
       @include mobile {
-        min-width: 282px;
+        max-width: 100%;
+        width: auto;
       }
     }
 
@@ -76,9 +61,29 @@
       /* не знаю как сделать свечение */
       border: 3px solid #3bbded;
       border-radius: 14px;
-      margin-top: 106px;
       position: relative;
       box-shadow: 0 0 5px #3bbded;
+      background-color: $color-dark-test;
+      z-index: 1;
+
+      &-tail {
+        height: 91px;
+        width: 32px;
+        border-top: 3px solid #3bbded;
+        border-right: 3px solid #3bbded;
+        border-bottom: 3px solid #3bbded;
+        border-radius: 0 14px 14px 0;
+        background-color: $color-dark-test;
+        box-shadow: 0 0 5px #3bbded;
+
+        @include mobile {
+          height: 68px;
+          width: 24px;
+          border-top: 1.5px solid #3bbded;
+          border-right: 1.5px solid #3bbded;
+          border-bottom: 1.5px solid #3bbded;
+        }
+      }
 
       &::before {
         position: absolute;
@@ -109,12 +114,21 @@
       @include mobile {
         max-width: 282px;
         border: 1.5px solid lightblue;
-        margin-top: 34px;
-        //пока скрыл свечение в моб верстке
-        &::after,
-        &::before {
-          display: none;
+
+        &::after {
+          width: 150px;
+          height: 4px;
+          bottom: -2px;
+          right: 25px;
         }
+
+        &::before {
+          width: 150px;
+          height: 4px;
+          top: -2px;
+          left: 25px;
+        }
+
       }
 
 
@@ -160,6 +174,8 @@
     display: flex;
     padding: 27px 0 0 48px;
     column-gap: 24px;
+    background-color: $color-dark-test;
+    z-index: 1;
 
     @include mobile {
       padding: 18px 0 0 24px;

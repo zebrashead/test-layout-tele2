@@ -1,13 +1,13 @@
 .how {
   max-width: 665px;
-  margin: 0 auto;
+  margin: 0 auto 106px auto;
   padding-top: 89px;
   position: relative;
 
   @include mobile {
     min-width: 339px;
     padding-top: 54px;
-    margin: 0;
+    margin-bottom: 34px;
   }
 
   &__title {

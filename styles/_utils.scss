@@ -1,9 +1,31 @@
-.container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+//.container {
+//  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+//  margin-inline: auto;
+//  padding-inline: var(--container-padding-x);
+//
+//
+//
+//  @include mobile {
+//    padding-inline: 18px;
+//  }
+//}
 
-  @include mobile {
+.container {
+  max-width: 84%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  @media (min-width: 0px) {
+    max-width: 100%;
     padding-inline: 18px;
+  }
+  @media (min-width: 768px) {
+    max-width: 88%;
+  }
+  @media (min-width: 1920px) {
+    max-width: 80%;
   }
 }

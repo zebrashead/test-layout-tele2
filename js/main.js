@@ -1,6 +1,9 @@
 const batteryEnergy = document.getElementsByClassName('battery__logo-small');
 const monthGb = document.querySelectorAll('.battery__list-link');
-
+console.log(batteryEnergy);
+console.log(monthGb);
+//сначала пробежаться по всем классом и убрать, а потом пробежаться и поставить нужным
+//цикл в цикле
 for (let i = 0; i < monthGb.length; i++) {
     monthGb[i].addEventListener('click', (e) => {
         e.preventDefault();

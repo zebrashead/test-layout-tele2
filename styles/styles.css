@@ -189,14 +189,32 @@ svg * {
 }
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  max-width: 84%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
 }
-@media (max-width: 767px) {
+@media (min-width: 0px) {
   .container {
+    max-width: 100%;
     padding-inline: 18px;
   }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 88%;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
@@ -251,6 +269,7 @@ a {
 }
 .header__body .container {
   padding: 0;
+  max-width: 100%;
 }
 @media (max-width: 767px) {
   .header__body {
@@ -496,7 +515,7 @@ a {
 
 .how {
   max-width: 665px;
-  margin: 0 auto;
+  margin: 0 auto 106px auto;
   padding-top: 89px;
   position: relative;
 }
@@ -504,7 +523,7 @@ a {
   .how {
     min-width: 339px;
     padding-top: 54px;
-    margin: 0;
+    margin-bottom: 34px;
   }
 }
 .how__title {
@@ -901,55 +920,39 @@ a {
 }
 .section-battery .image {
   position: absolute;
-  left: -140px;
-  bottom: -35px;
+  top: -20%;
+  right: -100vw;
   z-index: 0;
   width: 100vw;
 }
+.section-battery .image__mobile {
+  display: none;
+}
+.section-battery .image__desktop {
+  display: block;
+}
 .section-battery .image .img {
   width: 100%;
-  display: none;
 }
 .section-battery .battery {
   padding-top: 57px;
   position: relative;
 }
+.section-battery .battery__main {
+  display: flex;
+  align-items: center;
+}
 .section-battery .battery__body {
-  width: 40%;
-  max-width: 389px;
+  width: 421px;
   background-color: #1F2229;
   z-index: 1;
   position: relative;
-}
-.section-battery .battery__body::after {
-  position: absolute;
-  top: 46px;
-  right: -33px;
-  content: "";
-  display: block;
-  width: 33px;
-  height: 91px;
-  border-top: 3px solid #3bbded;
-  border-right: 3px solid #3bbded;
-  border-bottom: 3px solid #3bbded;
-  border-radius: 0 14px 14px 0;
-  background-color: #1F2229;
-  box-shadow: 0 0 5px #3bbded;
-}
-@media (max-width: 767px) {
-  .section-battery .battery__body::after {
-    height: 68px;
-    width: 24px;
-    top: 30px;
-    right: -24px;
-    border-top: 1.5px solid #3bbded;
-    border-right: 1.5px solid #3bbded;
-    border-bottom: 1.5px solid #3bbded;
-  }
+  border: 1px solid red;
 }
 @media (max-width: 767px) {
   .section-battery .battery__body {
-    min-width: 282px;
+    max-width: 100%;
+    width: auto;
   }
 }
 @media (max-width: 767px) {
@@ -968,9 +971,29 @@ a {
   /* не знаю как сделать свечение */
   border: 3px solid #3bbded;
   border-radius: 14px;
-  margin-top: 106px;
   position: relative;
   box-shadow: 0 0 5px #3bbded;
+  background-color: #1F2229;
+  z-index: 1;
+}
+.section-battery .battery__logo-tail {
+  height: 91px;
+  width: 32px;
+  border-top: 3px solid #3bbded;
+  border-right: 3px solid #3bbded;
+  border-bottom: 3px solid #3bbded;
+  border-radius: 0 14px 14px 0;
+  background-color: #1F2229;
+  box-shadow: 0 0 5px #3bbded;
+}
+@media (max-width: 767px) {
+  .section-battery .battery__logo-tail {
+    height: 68px;
+    width: 24px;
+    border-top: 1.5px solid #3bbded;
+    border-right: 1.5px solid #3bbded;
+    border-bottom: 1.5px solid #3bbded;
+  }
 }
 .section-battery .battery__logo::before {
   position: absolute;
@@ -1000,10 +1023,18 @@ a {
   .section-battery .battery__logo {
     max-width: 282px;
     border: 1.5px solid lightblue;
-    margin-top: 34px;
   }
-  .section-battery .battery__logo::after, .section-battery .battery__logo::before {
-    display: none;
+  .section-battery .battery__logo::after {
+    width: 150px;
+    height: 4px;
+    bottom: -2px;
+    right: 25px;
+  }
+  .section-battery .battery__logo::before {
+    width: 150px;
+    height: 4px;
+    top: -2px;
+    left: 25px;
   }
 }
 .section-battery .battery__logo-container {
@@ -1044,6 +1075,8 @@ a {
   display: flex;
   padding: 27px 0 0 48px;
   column-gap: 24px;
+  background-color: #1F2229;
+  z-index: 1;
 }
 @media (max-width: 767px) {
   .section-battery .battery__list {
