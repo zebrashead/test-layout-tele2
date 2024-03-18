@@ -11,6 +11,8 @@
 
     .img {
       width: 100%;
+      //пока скрыл волосы
+      display: none;
     }
   }
 
@@ -44,10 +46,16 @@
         @include mobile {
           height: 68px;
           width: 24px;
+          top: 30px;
+          right: -24px;
           border-top: 1.5px solid #3bbded;
           border-right: 1.5px solid #3bbded;
           border-bottom: 1.5px solid #3bbded;
         }
+      }
+
+      @include mobile {
+        min-width: 282px;
       }
     }
 
@@ -102,6 +110,11 @@
         max-width: 282px;
         border: 1.5px solid lightblue;
         margin-top: 34px;
+        //пока скрыл свечение в моб верстке
+        &::after,
+        &::before {
+          display: none;
+        }
       }
 
 
@@ -181,13 +194,6 @@
       &:hover {
         color: lightblue;
       }
-    }
-  }
-
-  .image__mobile {
-    display: none;
-    @include mobile {
-
     }
   }
 }
